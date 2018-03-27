@@ -1,0 +1,65 @@
+<div class="container">
+
+
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+
+            <th>ID</th>
+            <th>Name</th>
+            <th>Power</th>
+            <th>Alias</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+
+            <td>
+              <input patter="^[0-9]*$" #heroId="ngModel" name="id" type="text" class="form-control" [(ngModel)]="newHero.id">
+              <div [hidden]="heroId.pristine || heroId.valid">Nem jól adtad meg!</div>
+            </td>
+            <td>
+              <input name="name" type="text" class="form-control" [(ngModel)]="newHero.name">
+            </td>
+            <td>
+              <input name="power" type="text" class="form-control" [(ngModel)]="newHero.power">
+            </td>
+            <td>
+              <input name="alterego" type="text" class="form-control" [(ngModel)]="newHero.alterEgo">
+            </td>
+            <td>
+              <div class="btn-group btn-group-toggle">
+                <button type="button" class="btn btn-success" (click)="addHero()">Update</button>
+
+              </div>
+            </td>
+          </tr>
+          <tr *ngFor="let hero of heroes">
+
+            <td>
+              {{hero.id}}
+            </td>
+            <td>
+              {{hero.name}}
+            </td>
+            <td>
+              {{hero.power}}
+            </td>
+            <td>
+              {{hero.alterEgo}}
+            </td>
+            <td>
+              <div class="btn-group btn-group-toggle">
+
+                <button type="button" class="btn btn-danger" (click)="deleteRow(i)">Delete</button>
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

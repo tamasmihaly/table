@@ -1,0 +1,44 @@
+<p>
+  crud-table works!
+</p>
+
+
+<div class="container">
+
+
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Key</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let club of clubs; index as i">
+            <td>{{ i+1 }}</td>
+            <td>
+              {{club.code}}
+            </td>
+            <td>
+              {{club.name}}
+            </td>
+            <td>
+              {{club.key}}
+            </td>
+            <td>
+              <div class="btn-group">
+                <button type="button" class="btn btn-success" (click)="updateRow(club)">Update</button>
+                <button type="button" class="btn btn-warning" (click)="deleteRow(i)">Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
